@@ -11,6 +11,12 @@
 		CECDC46B27B52AC100D53F93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC46A27B52AC100D53F93 /* ContentView.swift */; };
 		CECDC46D27B52AC600D53F93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECDC46C27B52AC600D53F93 /* Assets.xcassets */; };
 		CECDC47027B52AC600D53F93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECDC46F27B52AC600D53F93 /* Preview Assets.xcassets */; };
+		CECDC47727B52FC100D53F93 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CECDC47627B52FC100D53F93 /* Poppins-Regular.ttf */; };
+		CECDC47A27B530C900D53F93 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CECDC47927B530C900D53F93 /* Poppins-Light.ttf */; };
+		CECDC47D27B5335900D53F93 /* ToDoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CECDC47B27B5335900D53F93 /* ToDoModel.xcdatamodeld */; };
+		CECDC47F27B533F600D53F93 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC47E27B533F600D53F93 /* DataController.swift */; };
+		CECDC48127B5359E00D53F93 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC48027B5359E00D53F93 /* ContentView-ViewModel.swift */; };
+		CECDC48327B539D100D53F93 /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC48227B539D100D53F93 /* TargetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,13 @@
 		CECDC46A27B52AC100D53F93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CECDC46C27B52AC600D53F93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CECDC46F27B52AC600D53F93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CECDC47627B52FC100D53F93 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		CECDC47827B52FEF00D53F93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CECDC47927B530C900D53F93 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		CECDC47C27B5335900D53F93 /* ToDoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoModel.xcdatamodel; sourceTree = "<group>"; };
+		CECDC47E27B533F600D53F93 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		CECDC48027B5359E00D53F93 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
+		CECDC48227B539D100D53F93 /* TargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +64,15 @@
 		CECDC46727B52AC100D53F93 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				CECDC47827B52FEF00D53F93 /* Info.plist */,
 				CECDC46827B52AC100D53F93 /* ToDoListApp.swift */,
 				CECDC46A27B52AC100D53F93 /* ContentView.swift */,
+				CECDC48227B539D100D53F93 /* TargetView.swift */,
+				CECDC48027B5359E00D53F93 /* ContentView-ViewModel.swift */,
+				CECDC47B27B5335900D53F93 /* ToDoModel.xcdatamodeld */,
+				CECDC47E27B533F600D53F93 /* DataController.swift */,
+				CECDC47627B52FC100D53F93 /* Poppins-Regular.ttf */,
+				CECDC47927B530C900D53F93 /* Poppins-Light.ttf */,
 				CECDC46C27B52AC600D53F93 /* Assets.xcassets */,
 				CECDC46E27B52AC600D53F93 /* Preview Content */,
 			);
@@ -125,8 +145,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CECDC47727B52FC100D53F93 /* Poppins-Regular.ttf in Resources */,
 				CECDC47027B52AC600D53F93 /* Preview Assets.xcassets in Resources */,
 				CECDC46D27B52AC600D53F93 /* Assets.xcassets in Resources */,
+				CECDC47A27B530C900D53F93 /* Poppins-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +160,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CECDC46B27B52AC100D53F93 /* ContentView.swift in Sources */,
+				CECDC47F27B533F600D53F93 /* DataController.swift in Sources */,
+				CECDC48127B5359E00D53F93 /* ContentView-ViewModel.swift in Sources */,
+				CECDC48327B539D100D53F93 /* TargetView.swift in Sources */,
 				CECDC46927B52AC100D53F93 /* ToDoListApp.swift in Sources */,
+				CECDC47D27B5335900D53F93 /* ToDoModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +298,7 @@
 				DEVELOPMENT_TEAM = HT476QBRPD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToDoList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,6 +328,7 @@
 				DEVELOPMENT_TEAM = HT476QBRPD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToDoList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -341,6 +369,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CECDC47B27B5335900D53F93 /* ToDoModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CECDC47C27B5335900D53F93 /* ToDoModel.xcdatamodel */,
+			);
+			currentVersion = CECDC47C27B5335900D53F93 /* ToDoModel.xcdatamodel */;
+			path = ToDoModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CECDC45D27B52AC100D53F93 /* Project object */;
 }
