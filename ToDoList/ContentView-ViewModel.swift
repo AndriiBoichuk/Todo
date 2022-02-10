@@ -17,6 +17,7 @@ extension ContentView {
         init() {
             let dataController = DataController()
             viewContext = dataController.container.viewContext
+            getData()
         }
         
         func getData() {
@@ -30,9 +31,11 @@ extension ContentView {
         }
         
         func addData(_ data: String) {
-            let task = Target(context: viewContext)
-            task.name = data
-            task.isComleted = false
+            let target = Target(context: viewContext)
+            target.name = data
+            target.isComleted = false
+            
+            saveData()
         }
         
         func saveData() {
@@ -44,6 +47,20 @@ extension ContentView {
             } catch {
                 print("Error: \(error.localizedDescription)")
             }
+        }
+        
+        func updateData(_ target: Target) {
+            viewContext.performAndWait {
+                target.isComleted.toggle()
+                saveData()
+            }
+        }
+        
+        func removeData(_ indexSet: IndexSet) {
+            for index in indexSet {
+                viewContext.delete(targets[index])
+            }
+            saveData()
         }
     }
 }

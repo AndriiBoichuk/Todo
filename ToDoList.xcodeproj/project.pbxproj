@@ -16,7 +16,7 @@
 		CECDC47D27B5335900D53F93 /* ToDoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CECDC47B27B5335900D53F93 /* ToDoModel.xcdatamodeld */; };
 		CECDC47F27B533F600D53F93 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC47E27B533F600D53F93 /* DataController.swift */; };
 		CECDC48127B5359E00D53F93 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC48027B5359E00D53F93 /* ContentView-ViewModel.swift */; };
-		CECDC48327B539D100D53F93 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC48227B539D100D53F93 /* TaskView.swift */; };
+		CECDC48327B539D100D53F93 /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC48227B539D100D53F93 /* TargetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		CECDC47C27B5335900D53F93 /* ToDoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoModel.xcdatamodel; sourceTree = "<group>"; };
 		CECDC47E27B533F600D53F93 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		CECDC48027B5359E00D53F93 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
-		CECDC48227B539D100D53F93 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		CECDC48227B539D100D53F93 /* TargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 				CECDC47827B52FEF00D53F93 /* Info.plist */,
 				CECDC46827B52AC100D53F93 /* ToDoListApp.swift */,
 				CECDC46A27B52AC100D53F93 /* ContentView.swift */,
-				CECDC48227B539D100D53F93 /* TaskView.swift */,
+				CECDC48227B539D100D53F93 /* TargetView.swift */,
 				CECDC48027B5359E00D53F93 /* ContentView-ViewModel.swift */,
 				CECDC47B27B5335900D53F93 /* ToDoModel.xcdatamodeld */,
 				CECDC47E27B533F600D53F93 /* DataController.swift */,
@@ -162,7 +162,7 @@
 				CECDC46B27B52AC100D53F93 /* ContentView.swift in Sources */,
 				CECDC47F27B533F600D53F93 /* DataController.swift in Sources */,
 				CECDC48127B5359E00D53F93 /* ContentView-ViewModel.swift in Sources */,
-				CECDC48327B539D100D53F93 /* TaskView.swift in Sources */,
+				CECDC48327B539D100D53F93 /* TargetView.swift in Sources */,
 				CECDC46927B52AC100D53F93 /* ToDoListApp.swift in Sources */,
 				CECDC47D27B5335900D53F93 /* ToDoModel.xcdatamodeld in Sources */,
 			);
