@@ -7,17 +7,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct TodoListView: View {
     enum FocusField: Hashable {
         case field
     }
-    
+
     @StateObject private var viewModel = ViewModel()
     
     @FocusState private var focusedField: FocusField?
-    
-    @State private var isKeyboardShowing = false
-    @State private var textEntered = ""
     
     var body: some View {
         NavigationView {
@@ -58,25 +55,24 @@ struct ContentView: View {
                 
                 VStack {
                     Spacer()
-                    TextField("What do you like to do", text: $textEntered)
+                    TextField("What do you like to do", text: $viewModel.textEntered)
                         .padding(.horizontal)
                         .focused($focusedField, equals: .field)
                         .frame(height: 44
                         )
                         .background(.white)
-                        .opacity(isKeyboardShowing ? 1 : 0)
+                        .opacity(viewModel.isKeyboardShowing ? 1 : 0)
                         .submitLabel(.done)
                         .onSubmit {
-                            isKeyboardShowing = false
-                            viewModel.addData(textEntered)
-                            textEntered = ""
+                            viewModel.isKeyboardShowing = false
+                            viewModel.addData()
                         }
-                    if !isKeyboardShowing {
+                    if !viewModel.isKeyboardShowing {
                         HStack {
                             Spacer()
                             
                             Button {
-                                isKeyboardShowing = true
+                                viewModel.isKeyboardShowing = true
                                 focusedField = .field
                             } label: {
                                 Image(systemName: "plus")
@@ -91,7 +87,6 @@ struct ContentView: View {
                         }
                     }
                 }
-                
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -100,13 +95,13 @@ struct ContentView: View {
                         .padding()
                         .font(.custom("Poppins-Light", fixedSize: 17))
                 }
-            }
+            }            
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TodoListView()
     }
 }
