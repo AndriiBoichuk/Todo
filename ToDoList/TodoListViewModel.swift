@@ -1,18 +1,21 @@
 //
-//  ContentView-ViewModel.swift
+//  TodoListViewModel.swift
 //  ToDoList
 //
 //  Created by user on 10.02.2022.
 //
 
-import Foundation
+import SwiftUI
 import CoreData
 
-extension ContentView {
+extension TodoListView {    
     @MainActor class ViewModel: ObservableObject {
         let viewContext: NSManagedObjectContext
         
         @Published var targets: [Target] = []
+        
+        @Published var isKeyboardShowing = false
+        @Published var textEntered = ""
         
         init() {
             let dataController = DataController()
@@ -30,9 +33,10 @@ extension ContentView {
             }
         }
         
-        func addData(_ data: String) {
+        func addData() {
             let target = Target(context: viewContext)
-            target.name = data
+            target.name = textEntered
+            textEntered = ""
             target.isComleted = false
             
             saveData()

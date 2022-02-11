@@ -8,21 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		CECDC46927B52AC100D53F93 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC46827B52AC100D53F93 /* ToDoListApp.swift */; };
-		CECDC46B27B52AC100D53F93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC46A27B52AC100D53F93 /* ContentView.swift */; };
+		CECDC46B27B52AC100D53F93 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC46A27B52AC100D53F93 /* TodoListView.swift */; };
 		CECDC46D27B52AC600D53F93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECDC46C27B52AC600D53F93 /* Assets.xcassets */; };
 		CECDC47027B52AC600D53F93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECDC46F27B52AC600D53F93 /* Preview Assets.xcassets */; };
 		CECDC47727B52FC100D53F93 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CECDC47627B52FC100D53F93 /* Poppins-Regular.ttf */; };
 		CECDC47A27B530C900D53F93 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CECDC47927B530C900D53F93 /* Poppins-Light.ttf */; };
 		CECDC47D27B5335900D53F93 /* ToDoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CECDC47B27B5335900D53F93 /* ToDoModel.xcdatamodeld */; };
 		CECDC47F27B533F600D53F93 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC47E27B533F600D53F93 /* DataController.swift */; };
-		CECDC48127B5359E00D53F93 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC48027B5359E00D53F93 /* ContentView-ViewModel.swift */; };
+		CECDC48127B5359E00D53F93 /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC48027B5359E00D53F93 /* TodoListViewModel.swift */; };
 		CECDC48327B539D100D53F93 /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC48227B539D100D53F93 /* TargetView.swift */; };
+		CECDC48C27B657BC00D53F93 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC48B27B657BC00D53F93 /* LoginView.swift */; };
+		CECDC48E27B657C600D53F93 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC48D27B657C600D53F93 /* LoginViewModel.swift */; };
+		CECDC49027B65BBD00D53F93 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CECDC48F27B65BBD00D53F93 /* Poppins-SemiBold.ttf */; };
+		CECDC49227B65E6200D53F93 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC49127B65E6200D53F93 /* CountryModel.swift */; };
+		CECDC49527B6622900D53F93 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = CECDC49427B6622900D53F93 /* iPhoneNumberField */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CECDC46527B52AC100D53F93 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECDC46827B52AC100D53F93 /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
-		CECDC46A27B52AC100D53F93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CECDC46A27B52AC100D53F93 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		CECDC46C27B52AC600D53F93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CECDC46F27B52AC600D53F93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CECDC47627B52FC100D53F93 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
@@ -30,8 +35,12 @@
 		CECDC47927B530C900D53F93 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		CECDC47C27B5335900D53F93 /* ToDoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoModel.xcdatamodel; sourceTree = "<group>"; };
 		CECDC47E27B533F600D53F93 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		CECDC48027B5359E00D53F93 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
+		CECDC48027B5359E00D53F93 /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
 		CECDC48227B539D100D53F93 /* TargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
+		CECDC48B27B657BC00D53F93 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CECDC48D27B657C600D53F93 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		CECDC48F27B65BBD00D53F93 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		CECDC49127B65E6200D53F93 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CECDC49527B6622900D53F93 /* iPhoneNumberField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,10 +74,14 @@
 		CECDC46727B52AC100D53F93 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				CECDC48A27B657B000D53F93 /* Login */,
 				CECDC47827B52FEF00D53F93 /* Info.plist */,
 				CECDC46827B52AC100D53F93 /* ToDoListApp.swift */,
 				CECDC48827B5658500D53F93 /* Model */,
+				CECDC48027B5359E00D53F93 /* TodoListViewModel.swift */,
 				CECDC48727B5657300D53F93 /* ViewModel */,
+				CECDC46A27B52AC100D53F93 /* TodoListView.swift */,
+				CECDC48227B539D100D53F93 /* TargetView.swift */,
 				CECDC48627B5656500D53F93 /* Views */,
 				CECDC48927B5659700D53F93 /* Fonts */,
 				CECDC47E27B533F600D53F93 /* DataController.swift */,
@@ -88,8 +102,6 @@
 		CECDC48627B5656500D53F93 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CECDC46A27B52AC100D53F93 /* ContentView.swift */,
-				CECDC48227B539D100D53F93 /* TargetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -97,7 +109,6 @@
 		CECDC48727B5657300D53F93 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				CECDC48027B5359E00D53F93 /* ContentView-ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -113,10 +124,21 @@
 		CECDC48927B5659700D53F93 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				CECDC48F27B65BBD00D53F93 /* Poppins-SemiBold.ttf */,
 				CECDC47627B52FC100D53F93 /* Poppins-Regular.ttf */,
 				CECDC47927B530C900D53F93 /* Poppins-Light.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CECDC48A27B657B000D53F93 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CECDC48B27B657BC00D53F93 /* LoginView.swift */,
+				CECDC48D27B657C600D53F93 /* LoginViewModel.swift */,
+				CECDC49127B65E6200D53F93 /* CountryModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +157,9 @@
 			dependencies = (
 			);
 			name = ToDoList;
+			packageProductDependencies = (
+				CECDC49427B6622900D53F93 /* iPhoneNumberField */,
+			);
 			productName = ToDoList;
 			productReference = CECDC46527B52AC100D53F93 /* ToDoList.app */;
 			productType = "com.apple.product-type.application";
@@ -163,6 +188,9 @@
 				Base,
 			);
 			mainGroup = CECDC45C27B52AC100D53F93;
+			packageReferences = (
+				CECDC49327B6622900D53F93 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
+			);
 			productRefGroup = CECDC46627B52AC100D53F93 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -177,6 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CECDC49027B65BBD00D53F93 /* Poppins-SemiBold.ttf in Resources */,
 				CECDC47727B52FC100D53F93 /* Poppins-Regular.ttf in Resources */,
 				CECDC47027B52AC600D53F93 /* Preview Assets.xcassets in Resources */,
 				CECDC46D27B52AC600D53F93 /* Assets.xcassets in Resources */,
@@ -191,9 +220,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECDC46B27B52AC100D53F93 /* ContentView.swift in Sources */,
+				CECDC46B27B52AC100D53F93 /* TodoListView.swift in Sources */,
+				CECDC48C27B657BC00D53F93 /* LoginView.swift in Sources */,
+				CECDC49227B65E6200D53F93 /* CountryModel.swift in Sources */,
 				CECDC47F27B533F600D53F93 /* DataController.swift in Sources */,
-				CECDC48127B5359E00D53F93 /* ContentView-ViewModel.swift in Sources */,
+				CECDC48127B5359E00D53F93 /* TodoListViewModel.swift in Sources */,
+				CECDC48E27B657C600D53F93 /* LoginViewModel.swift in Sources */,
 				CECDC48327B539D100D53F93 /* TargetView.swift in Sources */,
 				CECDC46927B52AC100D53F93 /* ToDoListApp.swift in Sources */,
 				CECDC47D27B5335900D53F93 /* ToDoModel.xcdatamodeld in Sources */,
@@ -401,6 +433,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CECDC49327B6622900D53F93 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CECDC49427B6622900D53F93 /* iPhoneNumberField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CECDC49327B6622900D53F93 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
+			productName = iPhoneNumberField;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CECDC47B27B5335900D53F93 /* ToDoModel.xcdatamodeld */ = {
