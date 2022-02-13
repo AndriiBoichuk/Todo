@@ -6,26 +6,62 @@
 //
 
 import Foundation
+import Firebase
+import SwiftUI
 
 extension LoginView {
     @MainActor class ViewModel: ObservableObject {
-        let countryModel = CountryModel()
+        private let countryModel = CountryModel()
+        private let characterLimit = 12
         
-        @Published var phoneNumber = ""
+        @Published var phoneNumber = "+"
+        @AppStorage("logStatus") var logStatus = false
+        // Alert info
+        @Published var errorMessage = ""
+        @Published var isShowingMessage = false
         
-//        private let mask = "+XX XXX XXX XX XX"
+        @Published var code = "" {
+            didSet {
+                goToVerification = true
+            }
+        }
+        
+        @Published var goToVerification = false
         
         init() {
+            logStatus = false
             phoneNumber.append(countryModel.getPhoneCode())
+            
+            // Change language code to french.
+            Auth.auth().languageCode = "ua";
         }
         
         func isNumberEntered() -> Bool {
-            phoneNumber.count == 12 ? true : false
+//            return phoneNumber.count == 13 ? true : false
+            return true
         }
         
-//        func getCountryCode() -> String {
-//            let regionCode = Locale.current.regionCode
-//        }
+        func sendCode() {
+            PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { code, error in
+                if let error = error {
+                    self.errorMessage = error.localizedDescription
+                    self.isShowingMessage.toggle()
+                    return
+                }
+                self.code = code ?? ""
+                self.goToVerification = true
+            }
+        }
         
+        func clearField() {
+            phoneNumber = ""
+        }
+        
+        func checkPossibilityTransition() {
+            if isNumberEntered() {
+                sendCode()
+//                goToVerification = true
+            }
+        }
     }
 }

@@ -21,7 +21,10 @@
 		CECDC48E27B657C600D53F93 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC48D27B657C600D53F93 /* LoginViewModel.swift */; };
 		CECDC49027B65BBD00D53F93 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CECDC48F27B65BBD00D53F93 /* Poppins-SemiBold.ttf */; };
 		CECDC49227B65E6200D53F93 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC49127B65E6200D53F93 /* CountryModel.swift */; };
-		CECDC49527B6622900D53F93 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = CECDC49427B6622900D53F93 /* iPhoneNumberField */; };
+		CECDC49827B6831E00D53F93 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CECDC49727B6831E00D53F93 /* FirebaseAuth */; };
+		CECDC49A27B683B000D53F93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CECDC49927B683B000D53F93 /* GoogleService-Info.plist */; };
+		CECDC49D27B687E900D53F93 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC49C27B687E900D53F93 /* VerificationView.swift */; };
+		CECDC49F27B6881900D53F93 /* VerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC49E27B6881900D53F93 /* VerificationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		CECDC48D27B657C600D53F93 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		CECDC48F27B65BBD00D53F93 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		CECDC49127B65E6200D53F93 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		CECDC49927B683B000D53F93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CECDC49C27B687E900D53F93 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
+		CECDC49E27B6881900D53F93 /* VerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECDC49527B6622900D53F93 /* iPhoneNumberField in Frameworks */,
+				CECDC49827B6831E00D53F93 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,17 +80,15 @@
 		CECDC46727B52AC100D53F93 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
-				CECDC48A27B657B000D53F93 /* Login */,
-				CECDC47827B52FEF00D53F93 /* Info.plist */,
 				CECDC46827B52AC100D53F93 /* ToDoListApp.swift */,
+				CECDC49B27B687D900D53F93 /* Verification */,
+				CECDC48A27B657B000D53F93 /* Login */,
+				CECDC4A027B6BCB400D53F93 /* TodoList */,
 				CECDC48827B5658500D53F93 /* Model */,
-				CECDC48027B5359E00D53F93 /* TodoListViewModel.swift */,
-				CECDC48727B5657300D53F93 /* ViewModel */,
-				CECDC46A27B52AC100D53F93 /* TodoListView.swift */,
-				CECDC48227B539D100D53F93 /* TargetView.swift */,
-				CECDC48627B5656500D53F93 /* Views */,
 				CECDC48927B5659700D53F93 /* Fonts */,
-				CECDC47E27B533F600D53F93 /* DataController.swift */,
+				CECDC4A127B6BD0900D53F93 /* Controller */,
+				CECDC47827B52FEF00D53F93 /* Info.plist */,
+				CECDC49927B683B000D53F93 /* GoogleService-Info.plist */,
 				CECDC46C27B52AC600D53F93 /* Assets.xcassets */,
 				CECDC46E27B52AC600D53F93 /* Preview Content */,
 			);
@@ -97,20 +101,6 @@
 				CECDC46F27B52AC600D53F93 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		CECDC48627B5656500D53F93 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		CECDC48727B5657300D53F93 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CECDC48827B5658500D53F93 /* Model */ = {
@@ -141,6 +131,33 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		CECDC49B27B687D900D53F93 /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+				CECDC49C27B687E900D53F93 /* VerificationView.swift */,
+				CECDC49E27B6881900D53F93 /* VerificationViewModel.swift */,
+			);
+			path = Verification;
+			sourceTree = "<group>";
+		};
+		CECDC4A027B6BCB400D53F93 /* TodoList */ = {
+			isa = PBXGroup;
+			children = (
+				CECDC48027B5359E00D53F93 /* TodoListViewModel.swift */,
+				CECDC46A27B52AC100D53F93 /* TodoListView.swift */,
+				CECDC48227B539D100D53F93 /* TargetView.swift */,
+			);
+			path = TodoList;
+			sourceTree = "<group>";
+		};
+		CECDC4A127B6BD0900D53F93 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CECDC47E27B533F600D53F93 /* DataController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,7 +175,7 @@
 			);
 			name = ToDoList;
 			packageProductDependencies = (
-				CECDC49427B6622900D53F93 /* iPhoneNumberField */,
+				CECDC49727B6831E00D53F93 /* FirebaseAuth */,
 			);
 			productName = ToDoList;
 			productReference = CECDC46527B52AC100D53F93 /* ToDoList.app */;
@@ -189,7 +206,7 @@
 			);
 			mainGroup = CECDC45C27B52AC100D53F93;
 			packageReferences = (
-				CECDC49327B6622900D53F93 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
+				CECDC49627B6831E00D53F93 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = CECDC46627B52AC100D53F93 /* Products */;
 			projectDirPath = "";
@@ -210,6 +227,7 @@
 				CECDC47027B52AC600D53F93 /* Preview Assets.xcassets in Resources */,
 				CECDC46D27B52AC600D53F93 /* Assets.xcassets in Resources */,
 				CECDC47A27B530C900D53F93 /* Poppins-Light.ttf in Resources */,
+				CECDC49A27B683B000D53F93 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +243,8 @@
 				CECDC49227B65E6200D53F93 /* CountryModel.swift in Sources */,
 				CECDC47F27B533F600D53F93 /* DataController.swift in Sources */,
 				CECDC48127B5359E00D53F93 /* TodoListViewModel.swift in Sources */,
+				CECDC49D27B687E900D53F93 /* VerificationView.swift in Sources */,
+				CECDC49F27B6881900D53F93 /* VerificationViewModel.swift in Sources */,
 				CECDC48E27B657C600D53F93 /* LoginViewModel.swift in Sources */,
 				CECDC48327B539D100D53F93 /* TargetView.swift in Sources */,
 				CECDC46927B52AC100D53F93 /* ToDoListApp.swift in Sources */,
@@ -435,21 +455,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CECDC49327B6622900D53F93 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
+		CECDC49627B6831E00D53F93 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField.git";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.6.1;
+				minimumVersion = 8.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CECDC49427B6622900D53F93 /* iPhoneNumberField */ = {
+		CECDC49727B6831E00D53F93 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CECDC49327B6622900D53F93 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
-			productName = iPhoneNumberField;
+			package = CECDC49627B6831E00D53F93 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 
