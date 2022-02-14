@@ -24,78 +24,83 @@ struct LoginView: View {
     
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading, spacing: 0) {
-                HStack {
-                    Button {
-                        viewModel.clearField()
-                    } label: {
-                        Image(systemName: "plus")
-                            .font(.title2)
-                            .rotationEffect(.radians(.pi/4))
-                            .foregroundColor(.black)
-                            .background(
-                                Circle()
-                                    .frame(width: 44, height: 44)
-                                    .tint(Color("backgroundColor"))
-                                
-                            )
+            ZStack {
+                VStack(alignment: .leading, spacing: 0) {
+                    HStack {
+                        Button {
+                            viewModel.clearField()
+                        } label: {
+                            Image(systemName: "plus")
+                                .font(.title2)
+                                .rotationEffect(.radians(.pi/4))
+                                .foregroundColor(.black)
+                                .background(
+                                    Circle()
+                                        .frame(width: 44, height: 44)
+                                        .tint(Color("backgroundColor"))
+                                    
+                                )
+                        }
+                        Spacer()
                     }
-                    Spacer()
-                }
-                .padding(.leading, 17)
-                
-                Text("Enter your phone number")
-                    .font(.custom("Poppins-SemiBold", fixedSize: 24))
-                    .padding(.top, 46)
-                
-                Text("We will send you confirmation code")
-                    .font(.custom("Poppins-Regular", fixedSize: 15))
-                    .padding(.top)
-                
-                TextField("(00) 0000-000-000", text: $viewModel.phoneNumber)
-                    .padding(.horizontal)
-                    .frame(height: 68)
-                    .font(.custom("Poppins-Regular", size: 24))
-                    .background(Color("backgroundColor").opacity(0.3))
-                    .cornerRadius(10)
+                    .padding(.leading, 17)
                     
-                    .keyboardType(.numberPad)
-                    .focused($isShowingKeyboard, equals: .field)
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                            self.isShowingKeyboard = .field
+                    Text("Enter your phone number")
+                        .font(.custom("Poppins-SemiBold", fixedSize: 24))
+                        .padding(.top, 46)
+                    
+                    Text("We will send you confirmation code")
+                        .font(.custom("Poppins-Regular", fixedSize: 15))
+                        .padding(.top)
+                    
+                    TextField("(00) 0000-000-000", text: $viewModel.phoneNumber)
+                        .padding(.horizontal)
+                        .frame(height: 68)
+                        .font(.custom("Poppins-Regular", size: 24))
+                        .background(Color("backgroundColor").opacity(0.3))
+                        .cornerRadius(10)
+                        
+                        .keyboardType(.numberPad)
+                        .focused($isShowingKeyboard, equals: .field)
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                self.isShowingKeyboard = .field
+                            }
+                        }
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: VerificationView(viewModel.phoneNumber, viewModel.code), isActive: $viewModel.goToVerification) {
+                        Text("")
+                            .hidden()
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        
+                        Button {
+                            viewModel.checkPossibilityTransition()
+                        } label: {
+                            Image(systemName: "arrow.right")
+                                .font(.title2)
+                                .foregroundColor(Color("limeColor"))
+                                .background(
+                                    Circle()
+                                        .frame(width: 64, height: 64)
+                                        .tint(Color("buttonColor"))
+                                )
+                                .padding(32)
                         }
                     }
-                
-                Spacer()
-                
-                NavigationLink(destination: VerificationView(viewModel.phoneNumber, viewModel.code), isActive: $viewModel.goToVerification) {
-                    Text("")
-                        .hidden()
                 }
+                .padding(.horizontal, 24)
+                .padding(.top, 20)
+                .navigationBarTitleDisplayMode(.inline)
                 
-                HStack {
-                    Spacer()
-                    
-                    Button {
-                        viewModel.checkPossibilityTransition()
-                    } label: {
-                        Image(systemName: "arrow.right")
-                            .font(.title2)
-                            .foregroundColor(Color("limeColor"))
-                            .background(
-                                Circle()
-                                    .frame(width: 64, height: 64)
-                                    .tint(Color("buttonColor"))
-                            )
-                            .padding(32)
-                    }
-                    .disabled(!viewModel.isNumberEntered())
+                if viewModel.isShowingAlert {
+                    CustomAlertView(alertTitle: viewModel.alertTitle, alertMessage: viewModel.alertMessage, isShowingAlert: $viewModel.isShowingAlert)
                 }
             }
-            .padding(.horizontal, 24)
-            .padding(.top, 20)
-            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

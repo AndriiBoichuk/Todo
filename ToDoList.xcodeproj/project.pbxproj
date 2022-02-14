@@ -25,6 +25,7 @@
 		CECDC49A27B683B000D53F93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CECDC49927B683B000D53F93 /* GoogleService-Info.plist */; };
 		CECDC49D27B687E900D53F93 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC49C27B687E900D53F93 /* VerificationView.swift */; };
 		CECDC49F27B6881900D53F93 /* VerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC49E27B6881900D53F93 /* VerificationViewModel.swift */; };
+		CECDC4A327BA5B0C00D53F93 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC4A227BA5B0B00D53F93 /* CustomAlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		CECDC49927B683B000D53F93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CECDC49C27B687E900D53F93 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		CECDC49E27B6881900D53F93 /* VerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewModel.swift; sourceTree = "<group>"; };
+		CECDC4A227BA5B0B00D53F93 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				CECDC48B27B657BC00D53F93 /* LoginView.swift */,
+				CECDC4A227BA5B0B00D53F93 /* CustomAlertView.swift */,
 				CECDC48D27B657C600D53F93 /* LoginViewModel.swift */,
 				CECDC49127B65E6200D53F93 /* CountryModel.swift */,
 			);
@@ -244,6 +247,7 @@
 				CECDC47F27B533F600D53F93 /* DataController.swift in Sources */,
 				CECDC48127B5359E00D53F93 /* TodoListViewModel.swift in Sources */,
 				CECDC49D27B687E900D53F93 /* VerificationView.swift in Sources */,
+				CECDC4A327BA5B0C00D53F93 /* CustomAlertView.swift in Sources */,
 				CECDC49F27B6881900D53F93 /* VerificationViewModel.swift in Sources */,
 				CECDC48E27B657C600D53F93 /* LoginViewModel.swift in Sources */,
 				CECDC48327B539D100D53F93 /* TargetView.swift in Sources */,

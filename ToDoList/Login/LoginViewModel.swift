@@ -16,9 +16,12 @@ extension LoginView {
         
         @Published var phoneNumber = "+"
         @AppStorage("logStatus") var logStatus = false
+        
         // Alert info
-        @Published var errorMessage = ""
-        @Published var isShowingMessage = false
+        @Published var alertMessage = ""
+        @Published var isShowingAlert = false
+        @Published var alertTitle = ""
+        
         
         @Published var code = "" {
             didSet {
@@ -31,26 +34,32 @@ extension LoginView {
         init() {
             logStatus = false
             phoneNumber.append(countryModel.getPhoneCode())
-            
-            // Change language code to french.
-            Auth.auth().languageCode = "ua";
+//
+//            // Change language code to u.
+//            Auth.auth().languageCode = "ua";
         }
         
         func isNumberEntered() -> Bool {
-//            return phoneNumber.count == 13 ? true : false
-            return true
+            return phoneNumber.count == 13 ? true : false
         }
         
         func sendCode() {
             PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { code, error in
                 if let error = error {
-                    self.errorMessage = error.localizedDescription
-                    self.isShowingMessage.toggle()
+                    self.alertTitle = "Error"
+                    self.alertMessage = error.localizedDescription
+                    self.isShowingAlert.toggle()
                     return
                 }
                 self.code = code ?? ""
                 self.goToVerification = true
             }
+        }
+        
+        func isValidPhone() -> Bool {
+            let phoneRegex = "^\\+380[4569][0-9]{8}"
+            let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
+            return phoneTest.evaluate(with: phoneNumber)
         }
         
         func clearField() {
@@ -59,8 +68,21 @@ extension LoginView {
         
         func checkPossibilityTransition() {
             if isNumberEntered() {
-                sendCode()
-//                goToVerification = true
+                if isValidPhone() {
+                    sendCode()
+                } else {
+                    alertTitle = "Invalid number"
+                    alertMessage = "Invalid number entered"
+                    withAnimation {
+                        isShowingAlert = true
+                    }
+                }
+            } else {
+                alertTitle = "Number not entered"
+                alertMessage = "Number must be 13 characters"
+                withAnimation {
+                    isShowingAlert = true
+                }
             }
         }
     }

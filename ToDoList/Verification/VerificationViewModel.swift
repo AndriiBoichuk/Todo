@@ -13,30 +13,34 @@ extension VerificationView {
     @MainActor class ViewModel: ObservableObject {
         @Published var enteredCode = "" {
             didSet {
-                checkCode()
+                if enteredCode.count > 5 {
+                    checkCode()
+                }
             }
         }
         
         // Alert info
-        @Published var errorMessage = ""
-        @Published var isShowingMessage = false
+        @Published var alertTitle = ""
+        @Published var alertMessage = ""
+        @Published var isShowingAlert = false
         
-        @AppStorage("logStatus") var logStatus = false
+        @Published var logStatus = false
         
         var code: String
         let phoneNumber: String
         
         init(_ code: String, _ phoneNumber: String) {
-            logStatus = false
             self.code = code
             self.phoneNumber = phoneNumber
         }
         
         func resendCode() {
+            clearField()
             PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { code, error in
                 if let error = error {
-                    self.errorMessage = error.localizedDescription
-                    self.isShowingMessage.toggle()
+                    self.alertTitle = "Error"
+                    self.alertMessage = error.localizedDescription
+                    self.isShowingAlert.toggle()
                     return
                 }
                 self.code = code ?? ""
@@ -44,24 +48,24 @@ extension VerificationView {
         }
         
         func checkCode() {
-            if enteredCode.count > 5 {
-                print(code)
-                let credential = PhoneAuthProvider.provider().credential(withVerificationID: code, verificationCode: enteredCode)
-                
-                Auth.auth().signIn(with: credential) { result, error in
-                    if let error = error {
-                        self.errorMessage = error.localizedDescription
-                        self.isShowingMessage = true
-                        return
-                    }
-                    
-                    self.logStatus = true
+            let credential = PhoneAuthProvider.provider().credential(withVerificationID: code, verificationCode: enteredCode)
+            
+            Auth.auth().signIn(with: credential) { result, error in
+                if let error = error {
+                    self.alertTitle = "Error"
+                    self.alertMessage = error.localizedDescription
+                    self.isShowingAlert = true
+                    return
                 }
+                
+                self.logStatus = true
             }
         }
         
         func clearField() {
-            enteredCode = ""
+            withAnimation {
+                enteredCode = ""
+            }
         }
     }
 }

@@ -29,73 +29,76 @@ struct VerificationView: View {
     @FocusState var isShowingKeyboard: FocusField?
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            HStack {
-                Button {
-                    viewModel.clearField()
-                } label: {
-                    Image(systemName: "plus")
-                        .font(.title2)
-                        .rotationEffect(.radians(.pi/4))
-                        .foregroundColor(.black)
-                        .background(
-                            Circle()
-                                .frame(width: 44, height: 44)
-                                .tint(Color("backgroundColor"))
-                            
-                        )
+        ZStack {
+            VStack(alignment: .leading, spacing: 0) {
+                HStack {
+                    Button {
+                        viewModel.clearField()
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.title2)
+                            .rotationEffect(.radians(.pi/4))
+                            .foregroundColor(.black)
+                            .background(
+                                Circle()
+                                    .frame(width: 44, height: 44)
+                                    .tint(Color("backgroundColor"))
+                                
+                            )
+                    }
+                    Spacer()
                 }
+                .padding(.leading, 17)
+                
+                Text("Phone Verification")
+                    .font(.custom("Poppins-SemiBold", fixedSize: 24))
+                    .padding(.top, 46)
+                
+                Text("Please enter the 6-digit code sent to you at \(viewModel.phoneNumber)")
+                    .font(.custom("Poppins-Light", fixedSize: 18))
+                    .padding(.top)
+                
+                Button {
+                    viewModel.resendCode()
+                } label: {
+                    Text("Resend code")
+                }
+                .padding(.vertical)
+                .font(.custom("Poppins-SemiBold", fixedSize: 15))
+                .foregroundColor(.black)
+                
+                NavigationLink(destination: TodoListView(), isActive: $viewModel.logStatus) {
+                    Text("")
+                        .hidden()
+                }
+                
+                TextField("000000", text: $viewModel.enteredCode)
+                    .padding(.horizontal)
+                    .frame(height: 68)
+                    .font(.custom("Poppins-Regular", size: 24))
+                    .background(Color("backgroundColor").opacity(0.3))
+                    .cornerRadius(10)
+                    .multilineTextAlignment(.center)
+                    .keyboardType(.numberPad)
+                    .focused($isShowingKeyboard, equals: .field)
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            self.isShowingKeyboard = .field
+                        }
+                    }
+                
                 Spacer()
             }
-            .padding(.leading, 17)
+            .padding(.horizontal, 24)
+            .padding(.top, 20)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: btnBack)
             
-            Text("Phone Verification")
-                .font(.custom("Poppins-SemiBold", fixedSize: 24))
-                .padding(.top, 46)
-            
-            Text("Please enter the 6-digit code sent to you at \(viewModel.phoneNumber)")
-                .font(.custom("Poppins-Light", fixedSize: 18))
-                .padding(.top)
-            
-            Button {
-                
-            } label: {
-                Text("Resend code")
+            if viewModel.isShowingAlert {
+                CustomAlertView(alertTitle: viewModel.alertTitle, alertMessage: viewModel.alertMessage, isShowingAlert: $viewModel.isShowingAlert)
             }
-            .padding(.vertical)
-            .font(.custom("Poppins-SemiBold", fixedSize: 15))
-            .foregroundColor(.black)
-            
-            NavigationLink(destination: TodoListView(), isActive: $viewModel.logStatus) {
-                Text("")
-                    .hidden()
-            }
-            
-            TextField("000000", text: $viewModel.enteredCode)
-                .padding(.horizontal)
-                .frame(height: 68)
-                .font(.custom("Poppins-Regular", size: 24))
-                .background(Color("backgroundColor").opacity(0.3))
-                .cornerRadius(10)
-                .multilineTextAlignment(.center)
-                .keyboardType(.numberPad)
-                .focused($isShowingKeyboard, equals: .field)
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        self.isShowingKeyboard = .field
-                    }
-                }
-            
-            Spacer()
         }
-        .padding(.horizontal, 24)
-        .padding(.top, 20)
-        .alert(isPresented: $viewModel.isShowingMessage) {
-            Alert(title: Text("Error"), message: Text(viewModel.errorMessage), dismissButton: .default(Text("Ok")))
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: btnBack)
     }
     
     init(_ phoneNumber: String, _ code: String) {
