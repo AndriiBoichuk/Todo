@@ -42,7 +42,7 @@ struct VerificationView: View {
                             .background(
                                 Circle()
                                     .frame(width: 44, height: 44)
-                                    .tint(Color("backgroundColor"))
+                                    .tint(.backgroundColor)
                                 
                             )
                     }
@@ -51,11 +51,11 @@ struct VerificationView: View {
                 .padding(.leading, 17)
                 
                 Text("Phone Verification")
-                    .font(.custom("Poppins-SemiBold", fixedSize: 24))
+                    .font(.custom(.semiBold, size: 24))
                     .padding(.top, 46)
                 
                 Text("Please enter the 6-digit code sent to you at \(viewModel.phoneNumber)")
-                    .font(.custom("Poppins-Light", fixedSize: 18))
+                    .font(.custom(.light, size: 18))
                     .padding(.top)
                 
                 Button {
@@ -64,7 +64,7 @@ struct VerificationView: View {
                     Text("Resend code")
                 }
                 .padding(.vertical)
-                .font(.custom("Poppins-SemiBold", fixedSize: 15))
+                .font(.custom(.semiBold, size: 15))
                 .foregroundColor(.black)
                 
                 NavigationLink(destination: TodoListView(), isActive: $viewModel.logStatus) {
@@ -73,13 +73,14 @@ struct VerificationView: View {
                 }
                 
                 TextField("000000", text: $viewModel.enteredCode)
+                    .textContentType(.oneTimeCode)
                     .padding(.horizontal)
                     .frame(height: 68)
-                    .font(.custom("Poppins-Regular", size: 24))
-                    .background(Color("backgroundColor").opacity(0.3))
+                    .font(.custom(.regular, size: 24))
+                    .background(Color.backgroundColor.opacity(0.3))
                     .cornerRadius(10)
                     .multilineTextAlignment(.center)
-                    .keyboardType(.numberPad)
+//                    .keyboardType(.numberPad)
                     .focused($isShowingKeyboard, equals: .field)
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {

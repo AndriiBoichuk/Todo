@@ -40,7 +40,7 @@ struct TargetView: View {
             Text(target.name ?? "")
                 .padding(.top, 13)
                 .padding(.bottom, 10)
-                .font(.custom("Poppins-Light", fixedSize: 15))
+                .font(.custom(.light, size: 15))
                 .foregroundColor(target.isComleted ? .gray : .black)
             
         }

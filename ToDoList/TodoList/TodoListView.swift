@@ -46,7 +46,7 @@ struct TodoListView: View {
                     }
                 } header: {
                     Text("Completed")
-                        .font(.custom("Poppins-Light", fixedSize: 12))
+                        .font(.custom(.light, size: 12))
                         .foregroundColor(.black)
                 }
                 .opacity(viewModel.targets.filter { $0.isComleted }.count == 0 ? 0 : 1)
@@ -78,7 +78,7 @@ struct TodoListView: View {
                                 .font(.title.bold())
                         }
                         .padding()
-                        .background(Color("buttonColor"))
+                        .background(Color.backgroundColor)
                         .foregroundColor(.white)
                         .font(.title)
                         .clipShape(Circle())
@@ -92,7 +92,7 @@ struct TodoListView: View {
             ToolbarItem(placement: .principal) {
                 Text("Do later stuff")
                     .padding()
-                    .font(.custom("Poppins-Light", fixedSize: 17))
+                    .font(.custom(.light, size: 17))
             }
         }
         

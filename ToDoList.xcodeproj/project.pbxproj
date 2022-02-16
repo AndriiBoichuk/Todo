@@ -26,6 +26,8 @@
 		CECDC49D27B687E900D53F93 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC49C27B687E900D53F93 /* VerificationView.swift */; };
 		CECDC49F27B6881900D53F93 /* VerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC49E27B6881900D53F93 /* VerificationViewModel.swift */; };
 		CECDC4A327BA5B0C00D53F93 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC4A227BA5B0B00D53F93 /* CustomAlertView.swift */; };
+		CEDF06F127BCF0BE00F3CB1D /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF06F027BCF0BE00F3CB1D /* FontExtension.swift */; };
+		CEDF06F427BCF95200F3CB1D /* ColorExntension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF06F327BCF95200F3CB1D /* ColorExntension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		CECDC49C27B687E900D53F93 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		CECDC49E27B6881900D53F93 /* VerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewModel.swift; sourceTree = "<group>"; };
 		CECDC4A227BA5B0B00D53F93 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		CEDF06F027BCF0BE00F3CB1D /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		CEDF06F327BCF95200F3CB1D /* ColorExntension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExntension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 				CECDC4A027B6BCB400D53F93 /* TodoList */,
 				CECDC48827B5658500D53F93 /* Model */,
 				CECDC48927B5659700D53F93 /* Fonts */,
+				CEDF06F227BCF92E00F3CB1D /* Extensions */,
 				CECDC4A127B6BD0900D53F93 /* Controller */,
 				CECDC47827B52FEF00D53F93 /* Info.plist */,
 				CECDC49927B683B000D53F93 /* GoogleService-Info.plist */,
@@ -159,6 +164,15 @@
 				CECDC47E27B533F600D53F93 /* DataController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		CEDF06F227BCF92E00F3CB1D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEDF06F027BCF0BE00F3CB1D /* FontExtension.swift */,
+				CEDF06F327BCF95200F3CB1D /* ColorExntension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,7 +255,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDF06F427BCF95200F3CB1D /* ColorExntension.swift in Sources */,
 				CECDC46B27B52AC100D53F93 /* TodoListView.swift in Sources */,
+				CEDF06F127BCF0BE00F3CB1D /* FontExtension.swift in Sources */,
 				CECDC48C27B657BC00D53F93 /* LoginView.swift in Sources */,
 				CECDC49227B65E6200D53F93 /* CountryModel.swift in Sources */,
 				CECDC47F27B533F600D53F93 /* DataController.swift in Sources */,

@@ -34,9 +34,6 @@ extension LoginView {
         init() {
             logStatus = false
             phoneNumber.append(countryModel.getPhoneCode())
-//
-//            // Change language code to u.
-//            Auth.auth().languageCode = "ua";
         }
         
         func isNumberEntered() -> Bool {

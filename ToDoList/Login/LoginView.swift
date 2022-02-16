@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import iPhoneNumberField
 
 struct LoginView: View {
     enum FocusField: Hashable {
@@ -37,7 +36,7 @@ struct LoginView: View {
                                 .background(
                                     Circle()
                                         .frame(width: 44, height: 44)
-                                        .tint(Color("backgroundColor"))
+                                        .tint(.backgroundColor)
                                     
                                 )
                         }
@@ -46,18 +45,18 @@ struct LoginView: View {
                     .padding(.leading, 17)
                     
                     Text("Enter your phone number")
-                        .font(.custom("Poppins-SemiBold", fixedSize: 24))
+                        .font(.custom(.semiBold, size: 24))
                         .padding(.top, 46)
                     
                     Text("We will send you confirmation code")
-                        .font(.custom("Poppins-Regular", fixedSize: 15))
+                        .font(.custom(.regular, size: 15))
                         .padding(.top)
                     
                     TextField("(00) 0000-000-000", text: $viewModel.phoneNumber)
                         .padding(.horizontal)
                         .frame(height: 68)
-                        .font(.custom("Poppins-Regular", size: 24))
-                        .background(Color("backgroundColor").opacity(0.3))
+                        .font(.custom(.regular, size: 24))
+                        .background(Color.backgroundColor.opacity(0.3))
                         .cornerRadius(10)
                         
                         .keyboardType(.numberPad)
@@ -83,11 +82,11 @@ struct LoginView: View {
                         } label: {
                             Image(systemName: "arrow.right")
                                 .font(.title2)
-                                .foregroundColor(Color("limeColor"))
+                                .foregroundColor(.limeColor)
                                 .background(
                                     Circle()
                                         .frame(width: 64, height: 64)
-                                        .tint(Color("buttonColor"))
+                                        .tint(.buttonColor)
                                 )
                                 .padding(32)
                         }

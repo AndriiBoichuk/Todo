@@ -15,11 +15,11 @@ struct CustomAlertView: View {
     var body: some View {
         VStack(spacing: 0) {
             Text(alertTitle)
-                .font(.custom("Poppins-Regular", fixedSize: 24))
+                .font(.custom(.regular, size: 24))
                 .foregroundColor(.gray)
                 .padding(.top)
             Text(alertMessage)
-                .font(.custom("Poppins-Light", fixedSize: 14))
+                .font(.custom(.light, size: 14))
                 .padding(10)
             Spacer()
             Button {
