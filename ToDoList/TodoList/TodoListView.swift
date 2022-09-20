@@ -12,7 +12,7 @@ struct TodoListView: View {
         case field
     }
     
-    @StateObject private var viewModel = ViewModel()
+    @StateObject private var viewModel: ViewModel
     
     @FocusState private var focusedField: FocusField?
     
@@ -78,7 +78,7 @@ struct TodoListView: View {
                                 .font(.title.bold())
                         }
                         .padding()
-                        .background(Color.backgroundColor)
+                        .background(Color.buttonColor)
                         .foregroundColor(.white)
                         .font(.title)
                         .clipShape(Circle())
@@ -86,21 +86,40 @@ struct TodoListView: View {
                     }
                 }
             }
+            
+            SideMenu(phoneNumber: viewModel.phoneNumber, isOpen: viewModel.isShowingProfile, menuClose: showProfile)
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text("Do later stuff")
+                Text(viewModel.isShowingProfile ? "" : "Do later stuff")
                     .padding()
                     .font(.custom(.light, size: 17))
             }
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    showProfile()
+                } label: {
+                    Text("Profile")
+                        .padding()
+                        .foregroundColor(.black)
+                        .font(.custom(.light, size: 17))
+                }
+            }
         }
-        
+    }
+    
+    func showProfile() {
+        viewModel.isShowingProfile.toggle()
+    }
+    
+    init(_ phoneNumber: String) {
+        self._viewModel = StateObject(wrappedValue: ViewModel(phoneNumber))
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TodoListView()
+        TodoListView("+380983474145")
     }
 }

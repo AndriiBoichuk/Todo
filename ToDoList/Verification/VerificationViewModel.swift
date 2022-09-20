@@ -24,7 +24,9 @@ extension VerificationView {
         @Published var alertMessage = ""
         @Published var isShowingAlert = false
         
-        @Published var logStatus = false
+        @Published var goToTodo = false
+        
+        @AppStorage("logStatus") var logStatus = false
         
         var code: String
         let phoneNumber: String
@@ -57,8 +59,8 @@ extension VerificationView {
                     self.isShowingAlert = true
                     return
                 }
-                
                 self.logStatus = true
+                self.goToTodo = true
             }
         }
         

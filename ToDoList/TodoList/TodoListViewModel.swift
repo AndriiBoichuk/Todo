@@ -10,61 +10,43 @@ import CoreData
 
 extension TodoListView {    
     @MainActor class ViewModel: ObservableObject {
-        let viewContext: NSManagedObjectContext
+        let dataController = DataController()
         
         @Published var targets: [Target] = []
         
         @Published var isKeyboardShowing = false
         @Published var textEntered = ""
         
-        init() {
-            let dataController = DataController()
-            viewContext = dataController.container.viewContext
+        @Published var isShowingProfile = false
+        
+        let phoneNumber: String
+        
+        init(_ phoneNumber: String) {
+            self.phoneNumber = phoneNumber
             getData()
         }
         
         func getData() {
-            let request = NSFetchRequest<Target>(entityName: "Target") //exact name as in the CoreData file
-            
-            do {
-                try targets = viewContext.fetch(request)
-            } catch {
-                print("Error getting data. \(error.localizedDescription)")
-            }
+            targets = dataController.getData()
+            print(Thread.current)
         }
         
         func addData() {
-            let target = Target(context: viewContext)
-            target.name = textEntered
+            dataController.addData(text: textEntered)
             textEntered = ""
-            target.isComleted = false
-            
-            saveData()
-        }
-        
-        func saveData() {
-            do {
-                if viewContext.hasChanges {
-                    try viewContext.save()
-                    getData()
-                }
-            } catch {
-                print("Error: \(error.localizedDescription)")
-            }
+            getData()
         }
         
         func updateData(_ target: Target) {
-            viewContext.performAndWait {
-                target.isComleted.toggle()
-                saveData()
-            }
+            dataController.updateData(target)
+            getData()
         }
         
         func removeData(_ indexSet: IndexSet) {
             for index in indexSet {
-                viewContext.delete(targets[index])
+                dataController.removeData(targets[index])
             }
-            saveData()
+            getData()
         }
     }
 }

@@ -14,8 +14,7 @@ extension LoginView {
         private let countryModel = CountryModel()
         private let characterLimit = 12
         
-        @Published var phoneNumber = "+"
-        @AppStorage("logStatus") var logStatus = false
+        @AppStorage("phoneNumber") var phoneNumber = ""
         
         // Alert info
         @Published var alertMessage = ""
@@ -32,7 +31,7 @@ extension LoginView {
         @Published var goToVerification = false
         
         init() {
-            logStatus = false
+            phoneNumber = "+"
             phoneNumber.append(countryModel.getPhoneCode())
         }
         

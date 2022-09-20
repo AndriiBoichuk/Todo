@@ -67,7 +67,7 @@ struct VerificationView: View {
                 .font(.custom(.semiBold, size: 15))
                 .foregroundColor(.black)
                 
-                NavigationLink(destination: TodoListView(), isActive: $viewModel.logStatus) {
+                NavigationLink(destination: TodoListView(viewModel.phoneNumber), isActive: $viewModel.goToTodo) {
                     Text("")
                         .hidden()
                 }
@@ -80,7 +80,7 @@ struct VerificationView: View {
                     .background(Color.backgroundColor.opacity(0.3))
                     .cornerRadius(10)
                     .multilineTextAlignment(.center)
-//                    .keyboardType(.numberPad)
+                    .keyboardType(.numberPad)
                     .focused($isShowingKeyboard, equals: .field)
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
